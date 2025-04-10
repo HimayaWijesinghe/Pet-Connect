@@ -1,0 +1,292 @@
+/* Firstaidpage.css - Modern & Professional Version */
+
+/* General page styles */
+.firstaid-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Hero section styles */
+.firstaid-hero-section {
+  width: 100%;
+  background: linear-gradient(135deg, #4a90e2 0%, #1a56b3 100%);
+  padding: 4rem 2rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.firstaid-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.firstaid-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.firstaid-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Cards section styles */
+.firstaid-cards-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  margin-top: -2rem;
+}
+
+/* Stats container */
+.pet-stats-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.pet-stat-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Button styles */
+.pet-details-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  margin: 1rem auto 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  max-width: 300px;
+  width: 100%;
+}
+
+.pet-details-button:hover {
+  background-color: #3a7bc8;
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+}
+
+.pet-details-button:disabled {
+  background-color: #a0c2eb;
+  cursor: not-allowed;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-icon {
+  font-size: 1.1rem;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Info section styles */
+.firstaid-info-section {
+  background-color: #eef4fd;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.info-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* SweetAlert2 custom styling */
+.swal-container {
+  padding: 0;
+}
+
+.swal-popup {
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+}
+
+.swal-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.swal-form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.swal-form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.swal2-input, 
+.swal2-textarea {
+  margin: 0 !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  width: 100% !important;
+  transition: all 0.3s !important;
+  box-shadow: none !important;
+}
+
+.swal2-input:focus, 
+.swal2-textarea:focus {
+  border-color: #4a90e2 !important;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2) !important;
+}
+
+.swal2-textarea {
+  min-height: 120px !important;
+  resize: vertical !important;
+}
+
+.swal-confirm-button {
+  background-color: #4a90e2 !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3) !important;
+}
+
+.swal-cancel-button {
+  background-color: #f1f3f5 !important;
+  color: #4a5568 !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .firstaid-hero-section {
+    padding: 3rem 1rem;
+  }
+  
+  .firstaid-title {
+    font-size: 2rem;
+  }
+  
+  .firstaid-subtitle {
+    font-size: 1rem;
+  }
+  
+  .firstaid-cards-section {
+    padding: 2rem 1rem;
+  }
+  
+  .pet-details-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .info-card {
+    padding: 1.5rem;
+  }
+  
+  .info-card h3 {
+    font-size: 1.25rem;
+  }
+}

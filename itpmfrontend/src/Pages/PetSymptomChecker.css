@@ -1,0 +1,609 @@
+
+
+:root {
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+  --primary-light: #e1f0fa;
+  --secondary: #2ecc71;
+  --secondary-dark: #27ae60;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+  --dark: #34495e;
+  --light: #f5f5f5;
+  --gray: #95a5a6;
+  --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --transition: all 0.3s ease;
+  --font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f9f9f9;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Layout */
+.pet-checker-layout {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.sidebar {
+  width: 280px;
+  background-color: var(--primary-light);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Typography */
+h2.heading {
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p.paragraph {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #505050;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-top: 1.5rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Cards */
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  transition: var(--transition);
+}
+
+/* Forms */
+.input-container {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.input, .dropdown {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.input:focus, .dropdown:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.dropdown {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2334495e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+/* Buttons */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  flex: 1;
+  min-width: 150px;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: var(--radius);
+  background-color: var(--white);
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.button:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.button.selected {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.start-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.start-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.start-button:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
+}
+
+.back-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  background-color: var(--white);
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.back-button:hover {
+  background-color: #eee;
+}
+
+/* Step indicators */
+.step-indicator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.step-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 2px solid var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--gray);
+  transition: var(--transition);
+}
+
+.step-indicator.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+}
+
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background-color: var(--gray);
+  margin: 0 8px;
+  max-width: 60px;
+  transition: var(--transition);
+}
+
+.step-connector.completed {
+  background-color: var(--primary);
+}
+
+/* Sidebar specific */
+.sidebar-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.sidebar-content {
+  flex: 1;
+}
+
+.sidebar-item {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-item:last-child {
+  border-bottom: none;
+}
+
+.sidebar-label {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.sidebar-value {
+  font-size: 1rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.sidebar-empty {
+  color: var(--gray);
+  font-style: italic;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+/* First aid box */
+.first-aid-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.first-aid-box p {
+  margin-bottom: 1rem;
+  white-space: pre-line;
+}
+
+.first-aid-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Error messages */
+.error-message {
+  background-color: #fdecea;
+  border-left: 4px solid var(--danger);
+  color: #d32f2f;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .pet-checker-layout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+  }
+  
+  .main-content {
+    padding: 1.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .options {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+  }
+}
+
+/* Urgency indicators */
+.urgency-high {
+  background-color: #fdecea;
+  border-left: 4px solid #d32f2f;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.urgency-medium {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.urgency-low {
+  background-color: #e8f5e9;
+  border-left: 4px solid #388e3c;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Animated loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: var(--white);
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+/* List styling for recommendations */
+.recommendation-list {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.recommendation-list li {
+  margin-bottom: 0.75rem;
+}
+
+/* Share button styling */
+.share-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--secondary);
+  color: white;
+}
+
+.share-button:hover {
+  background-color: var(--secondary-dark);
+}
+
+/* Success message */
+.success-message {
+  background-color: #e8f5e9;
+  border-left: 4px solid var(--secondary);
+  color: #2e7d32;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.success-message::before {
+  content: '✓';
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Print styles */
+@media print {
+  .pet-checker-layout {
+    display: block;
+  }
+  
+  .sidebar {
+    width: 100%;
+    padding: 1rem 0;
+  }
+  
+  .main-content {
+    padding: 1rem 0;
+  }
+  
+  .step-indicator-container,
+  .back-button,
+  .options button:not(.selected) {
+    display: none;
+  }
+  
+  .card {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .disclaimer {
+    font-size: 8pt;
+  }
+}
+
+/* Add these styles to your PetSymptomChecker.css file */
+
+/* Report styling */
+.report-header {
+  border-bottom: 2px solid #4a7c59;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.report-header h3 {
+  margin: 0;
+  color: #4a7c59;
+  font-size: 1.5rem;
+}
+
+.pet-info-summary, .symptom-info {
+  margin-bottom: 20px;
+}
+
+.pet-info-summary h4, .symptom-info h4 {
+  margin-bottom: 10px;
+  color: #4a7c59;
+}
+
+.actions-container {
+  margin-top: 30px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+.actions-container h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.report-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.download-button {
+  background-color: #4a7c59;
+  color: white;
+}
+
+.download-button:hover:not(:disabled) {
+  background-color: #3a6b48;
+  transform: translateY(-2px);
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.email-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.email-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.email-button {
+  background-color: #3b82f6;
+  color: white;
+  min-width: 100px;
+}
+
+.email-button:hover:not(:disabled) {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.share-link-section {
+  margin-top: 20px;
+}
+
+.share-button {
+  background-color: #6b7280;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.share-button:hover:not(:disabled) {
+  background-color: #4b5563;
+  transform: translateY(-2px);
+}
+
+.success-message {
+  color: #10b981;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+@media print {
+  .actions-container, .options, .step-indicator-container, .sidebar {
+    display: none;
+  }
+  
+  .first-aid-box {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .card {
+    border: none;
+    box-shadow: none;
+  }
+}
